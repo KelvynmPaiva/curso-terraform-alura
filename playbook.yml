@@ -1,9 +1,26 @@
 - hosts: terraform-ansible
   tasks:
-    - name: Criando Arquivo index.html
-      copy:
-        dest: /home/ubuntu/index.html
-        content: "<h1>Feito com terraform e Automatizado com ansible</h1>"
+    - name: Instalando o python e virtualenv
+      apt: 
+        pkg: 
+        - python3
+        - virtualenv
+        update_cache: true
+      become: true # SUDO
 
-    - name: Criando servidor BusyBox
-      shell: "nohup busybox httpd -f -p 8080 &"
+    - name: Instalando dependencias com pip (Django e Django Rest)
+      pip:
+        virtualenv: /home/ubuntu/tcc/venv
+        name:
+        - django
+        - djangorestframework
+
+    - name: Iniciando Projeto
+      shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
+
+    - name: Alterando os hosts do settings 
+      lineinfile:
+        path: /home/ubuntu/tcc/setup/settings.py
+        regexp: 'ALLOWED_HOSTS'
+        line: 'ALLOWED_HOSTS = ["*"]'
+        backrefs: true
