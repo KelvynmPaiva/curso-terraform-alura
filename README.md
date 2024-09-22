@@ -14,7 +14,7 @@ Para rodar o projeto, siga os passos abaixo:
    ansible-playbook playbook.yml -u ubuntu --private-key [chave-de-acesso] -i hosts.yml
 
 1. **Rodar o executor Django**:
-    Execute esse comando dentro do diretorio: /home/ubuntu/tcc:
+    Execute esse comando dentro do diretorio: ***home/ubuntu/tcc***:
 
    ```bash
    python manage.py runserver 0.0.0.0:8000
