@@ -14,9 +14,15 @@
         name:
         - django
         - djangorestframework
+    
+    - name: Imdepotencia - Verificando se o projeto ja existe
+      stat: 
+        path: /home/ubuntu/tcc/setup/settings.py
+      register: projetoExistente
 
     - name: Iniciando Projeto
       shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
+      when: not projetoExistente.stat.exists
 
     - name: Alterando os hosts do settings 
       lineinfile:
