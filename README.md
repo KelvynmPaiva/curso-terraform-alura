@@ -21,11 +21,4 @@ Para rodar o projeto, siga os passos abaixo:
     ```bash
     python manage.py runserver 0.0.0.0:[PORTA]
     ```
-    
 
-<aside>
-💡
-
-Para cada **branche** desse projeto sera relativa a cada curso!
-
-</aside>
