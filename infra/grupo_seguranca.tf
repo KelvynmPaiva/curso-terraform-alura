@@ -10,7 +10,7 @@ resource "aws_security_group" "acesso_geral" {
     protocol = "-1"
   }
 
-  egress{
+  egress{   # Regras de Saida
     cidr_blocks = [ "0.0.0.0/0" ]
     ipv6_cidr_blocks = [ "::/0" ]
     from_port = 0
