@@ -20,7 +20,7 @@ resource "aws_instance" "app_server" {
   key_name = var.chave
 
   tags = {
-    Name = "Organização / Separação"
+    Name = var.nome_instancia_tag
   }
 }
 
