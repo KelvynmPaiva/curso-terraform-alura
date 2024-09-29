@@ -4,6 +4,7 @@ module "aws-dev" {
   regiao_aws = "us-east-1"
   chave = "iac-dev"
   nome_instancia_tag = "VM DESENVOLVIMENTO"
+  grupoDeseguranca = "security_group_desenvolvimento"
 }
 
 output "IP" {

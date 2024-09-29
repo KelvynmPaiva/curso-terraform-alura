@@ -13,3 +13,7 @@ variable "instancia" {
 variable "nome_instancia_tag" {
   type = string
 }
+
+variable "grupoDeseguranca" {
+  type = string
+}
