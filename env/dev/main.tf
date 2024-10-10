@@ -5,8 +5,8 @@ module "aws-dev" {
   chave = "iac-dev"
   nome_instancia_tag = "VM DESENVOLVIMENTO"
   grupoDeseguranca = "security_group_desenvolvimento"
-}
 
-output "IP" {
-  value = module.aws-dev.IP_publico
+  minimo = 0
+  maximo = 1
+  nomeGrupo = "dev"
 }

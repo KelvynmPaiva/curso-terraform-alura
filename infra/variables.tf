@@ -17,3 +17,15 @@ variable "nome_instancia_tag" {
 variable "grupoDeseguranca" {
   type = string
 }
+
+variable "maximo" {
+  type = number
+}
+
+variable "minimo" {
+  type = number
+}
+
+variable "nomeGrupo" {
+  type = string
+}

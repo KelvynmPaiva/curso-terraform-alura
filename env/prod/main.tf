@@ -5,8 +5,8 @@ module "aws-prod" {
   chave = "iac-prod"
   nome_instancia_tag = "VM PRODUÇÃO"
   grupoDeseguranca = "security_group_producao"
-}
-
-output "IP" {
-  value = module.aws-prod.IP_publico
+  # Infra Elastica 
+  minimo = 1
+  maximo = 10
+  nomeGrupo = "Prod"
 }
