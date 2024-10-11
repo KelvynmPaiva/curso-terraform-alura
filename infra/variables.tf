@@ -3,7 +3,7 @@ variable "regiao_aws" {
 }
 
 variable "chave" {
-    type = string
+  type = string
 }
 
 variable "instancia" {
